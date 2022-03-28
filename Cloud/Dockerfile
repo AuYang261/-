@@ -1,4 +1,4 @@
-FROM python3
+FROM auyang:auyang/ubuntu
 WORKDIR /root/ENSS
 # RUN python3 -m http.server 5000
 COPY requirements.txt requirements.txt
