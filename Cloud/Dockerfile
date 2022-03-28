@@ -1,7 +1,9 @@
-FROM auyang:auyang/ubuntu
+FROM python:3.6
+RUN apt-get update \
+&&apt-get install python3
 WORKDIR /root/ENSS
-# RUN python3 -m http.server 5000
-COPY requirements.txt requirements.txt
-RUN pip install -r requirements.txt
+# COPY requirements.txt requirements.txt
+# RUN pip install -r requirements.txt
+# RUN pip install http
 COPY . .
-CMD ["python3", "-m http.server", "5000"]
+CMD ["python3", "-m", "http.server", "8081"]
