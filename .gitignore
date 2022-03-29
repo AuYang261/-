@@ -131,3 +131,6 @@ dmypy.json
 
 # UML
 *.vpp.bak*
+
+# pycharm
+.idea/
