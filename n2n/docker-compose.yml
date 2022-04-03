@@ -1,0 +1,11 @@
+# yaml 配置
+version: '3'
+services:
+  n2n:
+    build: ./n2n
+    container_name: n2n
+    ports:
+      - "7000:7000"
+    # 云服务器上用Cloud；边缘服务器上用EdgeNet
+    dockerfile: Dockerfile-Cloud
+    # dockerfile: Dockerfile-EdgeNet

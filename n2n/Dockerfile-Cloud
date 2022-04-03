@@ -1,0 +1,7 @@
+FROM alpine
+WORKDIR /n2n
+COPY ./installer .
+RUN apt-get install libssl-dev \
+    && make \
+    && make install
+RUN ["/usr/sbin/supernode", "-l", "7000"]
