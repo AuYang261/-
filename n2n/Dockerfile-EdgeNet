@@ -1,6 +1,6 @@
 FROM alpine
 WORKDIR /n2n
-COPY ./installer .
+COPY ./n2n_linux .
 RUN apt-get install libssl-dev \
     && make \
     && make install

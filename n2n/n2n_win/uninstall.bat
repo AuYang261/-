@@ -1,0 +1,1 @@
+tapinstall.exe remove OemWin2k.inf tap0901
