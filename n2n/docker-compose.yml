@@ -3,10 +3,9 @@ version: '3.6'
 services:
   n2n:
     build:
-      context: ./n2n
+      context: .
       dockerfile: Dockerfile-Cloud
     container_name: n2n
     ports:
-      - "7000:7000"
-    # 云服务器上用Cloud；边缘服务器上用EdgeNet
-    # dockerfile: Dockerfile-EdgeNet
+      - "7000:7000/udp"
+    # 云服务器上用Cloud；边缘服务器不用docker（配环境快让人疯了->_->）
