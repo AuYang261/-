@@ -17,7 +17,7 @@ with app.app_context():
 def index():
     # 查询数据
     results = models.User.query.all()
-    print(results, results[0].username)
+    print(results, results[0].username if results else "empty!")
     
     if 'username' in session:
         res = make_response(render_template('welcome.html', method=request.method, data=request.data.decode()))
