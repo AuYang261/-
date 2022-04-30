@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, make_response, session, redirect, url_for
+from flask import Flask, request, render_template, make_response, session, redirect, url_for, jsonify
 import config
 import models
 from exts import db
@@ -44,13 +44,7 @@ def login():
     else: #返回登录页面
         return render_template('login.html')
 
-@app.route("/uploadFile", methods=['POST'])
-def uploadFile():
-    print(request)
-    return make_response(render_template('welcome.html', method=request.method, data=request.data.decode()))
-    pass
-
-@app.route("./edgeServer", methods=['GET'])
+@app.route("/edgeServer", methods=['GET'])
 def edgeServer():
-    return '127.0.0.1'
+    return jsonify(code=200, data={'edge_server_ip': '127.0.0.1'})
     pass
