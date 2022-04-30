@@ -134,3 +134,7 @@ dmypy.json
 
 # pycharm
 .idea/
+
+.vscode/
+
+migrations/
