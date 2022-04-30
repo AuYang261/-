@@ -25,7 +25,7 @@ def index():
     #     app.logger.error("user not login")
     #     return redirect(url_for('login'))
 
-    res = make_response(render_template('welcome.html', method=request.method, data=request.data.decode()))
+    res = make_response(render_template('index.html'))
     return res
 
 @app.route("/login", methods=['GET', 'POST'])
@@ -48,3 +48,11 @@ def login():
 def edgeServer():
     return jsonify(code=200, data={'edge_server_ip': '127.0.0.1'})
     pass
+
+@app.route("/fileInfo", methods=['POST'])
+def fileInfo():
+    info = request.form.get('fileInfo', '')
+
+    # 放到数据库中
+
+    return jsonify(code=200, msg='success!')

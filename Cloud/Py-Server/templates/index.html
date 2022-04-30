@@ -1,5 +1,7 @@
+<!-- 不一定要用表单，自己写js实现上传文件会更灵活 -->
 <form method="post" enctype="multipart/form-data" action="http://localhost:5000/uploadFile">
 	<p>请选择要上传的文件：</p>
+	<p><input type="text" name="text" /></p>
 	<p><input type="file" name="file" /></p>
 	<p><input type="submit" value="上传" /></p>
 </form>
